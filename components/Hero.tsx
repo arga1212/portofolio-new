@@ -25,11 +25,11 @@ const Hero: React.FC = () => {
         <div className="hidden md:flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-700">
               <img 
-                  src="/profile.png" 
+                  src="/fotoku.jpg" 
                   alt="Muhammad Arga Fikri Akbar" 
                   className="w-full h-full object-cover"
               />
-          </div>
+          </div>g
         </div>
       </div>
        <style>{`
