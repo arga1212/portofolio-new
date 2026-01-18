@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { navLinks } from '../constants';
 
 const SunIcon = () => (
@@ -28,37 +28,34 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800' : 'bg-transparent'}`}>
-      <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-5xl">
-        <div className="flex justify-between items-center py-4">
-          <a href="#" className="text-xl font-bold text-slate-900 dark:text-white transition-colors hover:text-slate-600 dark:hover:text-slate-300">
+    <header className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-2rem)] max-w-fit">
+      <div className="relative">
+        <div className="flex items-center justify-between bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-full p-2.5 transition-all duration-300">
+          <a href="#" className="text-xl font-bold text-slate-900 dark:text-white transition-colors hover:text-slate-600 dark:hover:text-slate-300 pl-4 pr-2">
             argaakbr
           </a>
-          <div className="flex items-center space-x-6">
-            <nav className="hidden md:flex space-x-8">
+          
+          <div className="hidden md:flex items-center gap-1">
+            <div className="w-px h-5 bg-slate-200 dark:bg-slate-700"></div>
+            <nav className="flex">
               {navLinks.map((link) => (
-                <a key={link.name} href={link.href} className="text-slate-600 dark:text-dark-subtext font-medium transition-colors hover:text-slate-900 dark:hover:text-white">
+                <a key={link.name} href={link.href} className="text-slate-600 dark:text-dark-subtext font-medium transition-colors hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 px-3.5 py-1.5 rounded-full">
                   {link.name}
                 </a>
               ))}
             </nav>
-            <button onClick={toggleTheme} className="text-slate-600 dark:text-dark-subtext hover:text-slate-900 dark:hover:text-white transition-colors">
+            <div className="w-px h-5 bg-slate-200 dark:bg-slate-700"></div>
+          </div>
+          
+          <div className="flex items-center gap-2">
+            <button onClick={toggleTheme} className="text-slate-600 dark:text-dark-subtext hover:text-slate-900 dark:hover:text-white transition-colors p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
               {theme === 'light' ? <MoonIcon /> : <SunIcon />}
             </button>
             <div className="md:hidden">
-              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-900 dark:text-white focus:outline-none">
+              <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="text-slate-900 dark:text-white focus:outline-none p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={isMenuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16m-7 6h7"}></path>
                 </svg>
@@ -66,17 +63,19 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
             </div>
           </div>
         </div>
-        {isMenuOpen && (
-          <div className="md:hidden pb-4">
-            <nav className="flex flex-col space-y-4 items-center">
+
+        {/* Mobile Menu */}
+        <div className={`md:hidden absolute top-full left-0 right-0 mt-2 transition-all duration-300 ease-in-out ${isMenuOpen ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'}`}>
+          <div className="bg-white/80 dark:bg-dark-bg/80 backdrop-blur-sm border border-slate-200 dark:border-slate-800 rounded-2xl p-4">
+            <nav className="flex flex-col space-y-2">
               {navLinks.map((link) => (
-                <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-slate-600 dark:text-dark-subtext font-medium text-center transition-colors hover:text-slate-900 dark:hover:text-white">
+                <a key={link.name} href={link.href} onClick={() => setIsMenuOpen(false)} className="text-slate-600 dark:text-dark-subtext font-medium text-center transition-colors hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800 px-4 py-2 rounded-lg">
                   {link.name}
                 </a>
               ))}
             </nav>
           </div>
-        )}
+        </div>
       </div>
     </header>
   );

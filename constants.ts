@@ -116,7 +116,8 @@ export const featuredProjects: Project[] = [
     imageUrl: '/twibbon.png',
     techStack: ['React'],
     fullDescription: 'Website sederhana yang dibuat menggunakan React untuk memudahkan peserta acara LDKS 2025 dalam membuat dan mengunduh twibbon acara secara otomatis tanpa watermark.',
-    repoUrl: 'https://github.com/barastrong/BintangArga', // Note: This seems to be the same repo as Marketplace
+    repoUrl: 'https://github.com/arga1212/twibbonldks.git', // Note: This seems to be the same repo as Marketplace
+    liveUrl: 'https://twibbonldks.vercel.app/',
   },
 ];
 

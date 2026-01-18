@@ -44,6 +44,37 @@
         }
       }
     </script>
+    <style>
+      #hero::before, #hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 30vw;
+        height: 30vh;
+        max-width: 400px;
+        max-height: 400px;
+        background-image:
+          linear-gradient(to right, #e2e8f0 1px, transparent 1px),
+          linear-gradient(to bottom, #e2e8f0 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 0;
+        mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+        -webkit-mask-image: radial-gradient(circle at center, black 0%, transparent 70%);
+        opacity: 0.6;
+        pointer-events: none;
+      }
+      #hero::before {
+        left: 0;
+      }
+      #hero::after {
+        right: 0;
+      }
+      .dark #hero::before, .dark #hero::after {
+        background-image:
+          linear-gradient(to right, #374151 1px, transparent 10px),
+          linear-gradient(to bottom, #374151 1px, transparent 10px);
+      }
+    </style>
   <script type="importmap">
 {
   "imports": {

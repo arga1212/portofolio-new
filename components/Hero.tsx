@@ -3,8 +3,8 @@ import React from 'react';
 
 const Hero: React.FC = () => {
   return (
-    <section id="hero" className="min-h-screen flex items-center justify-center py-20">
-      <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center py-20 overflow-hidden">
+      <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center w-full">
         {/* Image for Mobile */}
         <div className="md:hidden flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-700">
