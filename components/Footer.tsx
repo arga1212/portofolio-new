@@ -10,7 +10,7 @@ const Footer: React.FC = () => {
         </p>
         {/* TODO: Ganti dengan link Google Drive CV Anda yang sebenarnya */}
         <a 
-          href="https://docs.google.com/document/d/YOUR_UNIQUE_DOCUMENT_ID/view?usp=sharing" 
+          href="https://drive.google.com/file/d/1B0QgqfVeMwEZlprShRkZHN83MQpI6erS/view?usp=sharing" 
           target="_blank" 
           rel="noopener noreferrer" 
           className="px-6 py-2 bg-slate-100 dark:bg-dark-card text-slate-800 dark:text-white font-semibold rounded-lg shadow-sm transition-transform transform hover:scale-105 hover:bg-slate-200 dark:hover:bg-slate-700"
