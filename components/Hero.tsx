@@ -18,7 +18,7 @@ const Hero: React.FC = () => {
         
         <div className="animate-fade-in-up text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-4">
-            Hello, I'm Arga Fikri Akbar{' '}
+            Hello, I'm Muhammad Arga Fikri Akbar{' '}
             <span className="inline-block animate-wave">👋</span>
           </h1>
           <p className="max-w-xl text-slate-600 dark:text-dark-subtext text-lg md:text-xl mb-8 mx-auto md:mx-0">
