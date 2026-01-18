@@ -5,6 +5,17 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center py-20">
       <div className="grid md:grid-cols-2 gap-12 items-center w-full">
+        {/* Image for Mobile */}
+        <div className="md:hidden flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+          <div className="w-48 h-48 rounded-full overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-700">
+              <img 
+                  src="/fotoku.JPG" 
+                  alt="Muhammad Arga Fikri Akbar" 
+                  className="w-full h-full object-cover"
+              />
+          </div>
+        </div>
+        
         <div className="animate-fade-in-up text-center md:text-left">
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white mb-4">
             Hello, I'm Arga Fikri Akbar{' '}
@@ -22,6 +33,8 @@ const Hero: React.FC = () => {
             </a>
           </div>
         </div>
+        
+        {/* Image for Desktop */}
         <div className="hidden md:flex justify-center items-center animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
           <div className="w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl border-4 border-slate-200 dark:border-slate-700">
               <img 

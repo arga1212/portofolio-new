@@ -44,7 +44,7 @@ const Header: React.FC<HeaderProps> = ({ theme, toggleTheme }) => {
       <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-5xl">
         <div className="flex justify-between items-center py-4">
           <a href="#" className="text-xl font-bold text-slate-900 dark:text-white transition-colors hover:text-slate-600 dark:hover:text-slate-300">
-            arga.
+            argaakbr
           </a>
           <div className="flex items-center space-x-6">
             <nav className="hidden md:flex space-x-8">
