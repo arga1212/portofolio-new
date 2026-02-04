@@ -19,16 +19,18 @@ const Contact: React.FC = () => {
             id="contact" 
             className={`py-20 md:py-28 text-center transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
         >
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Get In Touch</h2>
-            <p className="max-w-2xl mx-auto text-slate-600 dark:text-dark-subtext mb-8">
-                Terbuka untuk kolaborasi, diskusi project, dan peluang pengembangan diri. Jangan ragu untuk menghubungi saya!
-            </p>
-            <a href={`mailto:${contactInfo.email}`} className="inline-block bg-slate-100 dark:bg-dark-card text-slate-700 dark:text-slate-200 font-mono text-lg py-3 px-6 rounded-lg mb-8 transition-colors hover:bg-slate-200 dark:hover:bg-slate-700">
-                {contactInfo.email}
-            </a>
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Get In Touch</h2>
+                <p className="max-w-2xl mx-auto text-gray-600 dark:text-gray-400 mb-8">
+                    Terbuka untuk kolaborasi, diskusi project, dan peluang pengembangan diri. Jangan ragu untuk menghubungi saya!
+                </p>
+                <a href={`mailto:${contactInfo.email}`} className="inline-block bg-gray-900 dark:bg-white text-white dark:text-gray-900 font-medium py-3 px-6 rounded-lg mb-8 hover:bg-gray-800 dark:hover:bg-gray-100 transition-colors">
+                    {contactInfo.email}
+                </a>
+            </div>
             <div className="flex justify-center items-center space-x-6">
                 {Object.entries(contactInfo.socials).map(([key, href]) => (
-                    <a key={key} href={href} target="_blank" rel="noopener noreferrer" className="text-slate-500 dark:text-dark-subtext transition-colors hover:text-slate-900 dark:hover:text-white" aria-label={key}>
+                    <a key={key} href={href} target="_blank" rel="noopener noreferrer" className="p-3 border border-gray-300 dark:border-gray-600 rounded-lg text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:border-gray-400 dark:hover:border-gray-500 transition-colors" aria-label={key}>
                         {socialIcons[key as keyof typeof socialIcons]}
                     </a>
                 ))}

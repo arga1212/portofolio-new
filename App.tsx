@@ -57,7 +57,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-dark-bg">
+    <div className="">
       <Header theme={theme} toggleTheme={toggleTheme} />
       <main className="container mx-auto px-6 md:px-12 lg:px-20 max-w-5xl">
         <Hero />

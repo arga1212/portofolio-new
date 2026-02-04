@@ -30,18 +30,18 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
     return (
         <div 
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-60 animate-fade-in"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50"
             onClick={onClose}
             aria-modal="true"
             role="dialog"
         >
             <div 
-                className="relative bg-white dark:bg-dark-card w-full max-w-2xl max-h-[90vh] rounded-lg shadow-xl overflow-y-auto p-6 md:p-8 animate-slide-up"
-                onClick={e => e.stopPropagation()} // Prevent closing when clicking inside the modal
+                className="relative bg-white dark:bg-slate-900 w-full max-w-2xl max-h-[90vh] rounded-2xl border border-gray-200 dark:border-slate-800 overflow-y-auto p-6 md:p-8"
+                onClick={e => e.stopPropagation()}
             >
                 <button 
                     onClick={onClose} 
-                    className="absolute top-4 right-4 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors"
+                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-900 dark:text-gray-400 dark:hover:text-white transition-colors p-2"
                     aria-label="Close modal"
                 >
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

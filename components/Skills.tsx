@@ -4,15 +4,13 @@ import { skills } from '../constants';
 import { useOnScreen } from '../hooks/useOnScreen';
 
 const SkillCard: React.FC<{ title: string; items: string[] }> = ({ title, items }) => (
-    <div className="bg-white dark:bg-dark-card p-6 rounded-lg border border-slate-200 dark:border-slate-800 transition-shadow hover:shadow-lg h-full">
-        <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4">{title}</h3>
-        <ul className="space-y-2">
+    <div className="bg-white dark:bg-slate-900 border border-gray-200 dark:border-slate-800 rounded-2xl p-6 h-full hover:shadow-lg transition-shadow">
+        <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">{title}</h3>
+        <ul className="space-y-3">
             {items.map((item, index) => (
                 <li key={index} className="flex items-start">
-                    <svg className="w-4 h-4 text-slate-500 mr-2 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                    </svg>
-                    <span className="text-slate-600 dark:text-dark-subtext">{item}</span>
+                    <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mr-3 mt-2 flex-shrink-0"></div>
+                    <span className="text-gray-600 dark:text-gray-400 text-sm">{item}</span>
                 </li>
             ))}
         </ul>
@@ -29,23 +27,49 @@ const Skills: React.FC = () => {
             id="skills" 
             className={`py-20 md:py-28 transition-all duration-700 ease-out ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
         >
-            <div className="text-center mb-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white">Skills & Expertise</h2>
-                <p className="text-slate-600 dark:text-dark-subtext mt-2">The tools and technologies I use to bring ideas to life.</p>
+            <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">Skills & Expertise</h2>
+                <p className="text-gray-600 dark:text-gray-400">The tools and technologies I use to bring ideas to life.</p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <SkillCard title={skills.frontend.title} items={skills.frontend.items} />
-                <SkillCard title={skills.backend.title} items={skills.backend.items} />
-                <SkillCard title={skills.iot.title} items={skills.iot.items} />
-
-                {/* This wrapper now uses flexbox to center the inner grid */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="animate-fade-in-up" style={{ animationDelay: '100ms' }}>
+                    <SkillCard title={skills.frontend.title} items={skills.frontend.items} />
+                </div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '200ms' }}>
+                    <SkillCard title={skills.backend.title} items={skills.backend.items} />
+                </div>
+                <div className="animate-fade-in-up" style={{ animationDelay: '300ms' }}>
+                    <SkillCard title={skills.iot.title} items={skills.iot.items} />
+                </div>
                 <div className="md:col-span-2 lg:col-span-3 flex justify-center">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full lg:w-2/3">
-                        <SkillCard title={skills.creative.title} items={skills.creative.items} />
-                        <SkillCard title={skills.soft.title} items={skills.soft.items} />
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full lg:w-2/3">
+                        <div className="animate-fade-in-up" style={{ animationDelay: '400ms' }}>
+                            <SkillCard title={skills.creative.title} items={skills.creative.items} />
+                        </div>
+                        <div className="animate-fade-in-up" style={{ animationDelay: '500ms' }}>
+                            <SkillCard title={skills.soft.title} items={skills.soft.items} />
+                        </div>
                     </div>
                 </div>
             </div>
+            
+            <style>{`
+              @keyframes fadeInUp {
+                from {
+                  opacity: 0;
+                  transform: translateY(30px);
+                }
+                to {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+              
+              .animate-fade-in-up {
+                animation: fadeInUp 0.8s ease-out forwards;
+                opacity: 0;
+              }
+            `}</style>
         </section>
     );
 };
