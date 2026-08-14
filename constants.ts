@@ -119,6 +119,22 @@ export const featuredProjects: Project[] = [
     repoUrl: 'https://github.com/arga1212/twibbonldks.git', // Note: This seems to be the same repo as Marketplace
     liveUrl: 'https://twibbonldks.vercel.app/',
   },
+  {
+    title: 'Twibbon MPLS Leadership 2026',
+    description: 'Website Twibbon untuk acara MPLS Leadership 2026 SMK Telkom Sidoarjo',
+    imageUrl: '/twibbon mpls.png',
+    techStack: ['React'],
+    fullDescription: 'Website interaktif yang dibangun menggunakan React untuk memfasilitasi pembuatan twibbon secara mudah bagi peserta MPLS Leadership SMK Telkom Sidoarjo tahun 2026.',
+    liveUrl: 'https://twibbonmplsleadership2026smktelkoms.vercel.app/',
+  },
+  {
+    title: 'Website Resmi SMPN 2 Candi',
+    description: 'Website profil dan sistem informasi SMPN 2 Candi',
+    imageUrl: '/web smpn2 candi.png',
+    techStack: ['Laravel', 'Filament'],
+    fullDescription: 'Berkontribusi sebagai Backend Developer menggunakan framework Laravel Filament dan Fotografer untuk website resmi sekolah SMPN 2 Candi. Proyek ini menghadirkan sistem informasi yang dinamis dengan panel admin yang efisien.',
+    liveUrl: 'https://smpn2candi.sch.id/',
+  },
 ];
 
 export const otherProjects: Project[] = [
